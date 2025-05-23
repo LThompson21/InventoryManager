@@ -35,16 +35,6 @@ size_t Item::getQuantity() const
 	return this->quantity;
 }
 
-void Item::setName( const std::string& name )
-{
-	this->name = name;
-}
-
-void Item::setDescription( const std::string& description )
-{
-	this->description = description;
-}
-
 void Item::setPrice( double price )
 {
 	this->price = price;

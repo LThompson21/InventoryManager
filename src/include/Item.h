@@ -17,10 +17,7 @@ public:
 
 	virtual size_t getMaxStackQuantity() const;
 
-	void setName( const std::string& name );
-	void setDescription( const std::string& description );
 	void setPrice( double price );
-
 	void adjustQuantity( int amount );
 
 protected:
@@ -32,8 +29,8 @@ protected:
 	void setQuantity( size_t quantity );
 
 private:
-	std::string name;
-	std::string description;
+	const std::string name;
+	const std::string description;
 	double price;
 	size_t quantity;
 };
