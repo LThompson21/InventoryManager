@@ -1,9 +1,5 @@
-// external/std includes
 #include <string>
-
-// internal includes
 #include "Weapon.h"
-
 
 Weapon::Weapon( const std::string& name, const std::string& description, double price, double damage )
 	: Item( name, description, price ), damage( damage )

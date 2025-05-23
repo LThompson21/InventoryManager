@@ -1,9 +1,5 @@
 #pragma once
 
-// external/std includes
-
-
-// internal includes
 #include "Item.h"
 
 class Weapon : public Item

@@ -1,9 +1,6 @@
 #pragma once
 
-// external/std includes
 #include <string>
-
-// internal includes
 
 class Item
 {

@@ -1,8 +1,5 @@
-// external/std includes
 #include <string>
 #include <cmath>
-
-// internal includes
 #include "Item.h"
 
 Item::Item( const std::string& name, const std::string& description, double price )

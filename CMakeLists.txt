@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 add_executable(APP
     src/main.cpp
     # Add any other source files here
-    "src/include/Weapon.h" "src/cpp/Weapon.cpp")
+    "src/include/Weapon.h" "src/cpp/Weapon.cpp" "src/include/RangedWeapon.h" "src/cpp/RangedWeapon.cpp")
 
 target_include_directories(APP PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/include
