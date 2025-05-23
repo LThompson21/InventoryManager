@@ -11,6 +11,18 @@ RangedWeapon::RangedWeapon( std::string& name, std::string& description, double 
 {
 }
 
+std::string RangedWeapon::asString() const
+{
+	return "RangedWeapon[ "
+		"name: " + this->getName() +
+		", description: " + this->getDescription() +
+		", price: " + std::to_string( this->getPrice() ) +
+		", quantity: " + std::to_string( this->getQuantity() ) +
+		", damage: " + std::to_string( this->getDamage() ) +
+		", range: " + std::to_string( this->range ) +
+		" ]";
+}
+
 double RangedWeapon::getRange() const
 {
 	return this->range;

@@ -3,7 +3,7 @@
 #include "Item.h"
 
 Item::Item( const std::string& name, const std::string& description, double price )
-	: name( name ), description( description ), price( price ), quantity( 0 )
+	: name( name ), description( description ), price( price ), quantity( 1 )
 {
 }
 
