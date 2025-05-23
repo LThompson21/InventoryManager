@@ -1,6 +1,9 @@
+// external/std include
 #include <iostream>
 
+// internal
+
 int main() {
-	std::cout << "Welcome to the Inventory System!" << std::endl;
+	std::cout << "Hello World" << std::endl;
 	return 0;
 }
