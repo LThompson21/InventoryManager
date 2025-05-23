@@ -15,15 +15,16 @@ public:
 	virtual size_t getMaxStackQuantity() const;
 
 	void setPrice( double price );
-	void adjustQuantity( int amount );
+	int adjustQuantity( int amount );
+
+	virtual ~Item() = default;
 
 protected:
 	Item( const std::string& name, const std::string& description, double price );
 	Item( const std::string& name, const std::string& description, double price, size_t quantity );
 
-	virtual ~Item() = default;
-
-	void setQuantity( size_t quantity );
+	int setQuantity( size_t quantity );
+	int clampQuantity();
 
 private:
 	const std::string name;

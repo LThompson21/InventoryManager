@@ -10,5 +10,9 @@ int main() {
 
 	Item* w = new RangedWeapon(std::string("Item"), std::string("Haha New Item Test"), 14, 12, 5);
 
+	std::cout << w->asString() << std::endl;
+
+	delete w;
+
 	return 0;
 }

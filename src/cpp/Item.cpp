@@ -10,6 +10,7 @@ Item::Item( const std::string& name, const std::string& description, double pric
 Item::Item( const std::string& name, const std::string& description, double price, size_t quantity )
 	: name( name ), description( description ), price( price ), quantity( quantity )
 {
+	this->clampQuantity();
 }
 
 std::string Item::getName() const
@@ -37,12 +38,13 @@ void Item::setPrice( double price )
 	this->price = price;
 }
 
-void Item::setQuantity( size_t quantity )
+int Item::setQuantity( size_t quantity )
 {
 	this->quantity = quantity;
+	return this->clampQuantity();
 }
 
-void Item::adjustQuantity( int amount )
+int Item::adjustQuantity( int amount )
 {
 	if ( amount < 0 )
 	{
@@ -50,19 +52,33 @@ void Item::adjustQuantity( int amount )
 		if ( subtractAmount > this->quantity )
 		{
 			this->quantity = 0;
+			return -( subtractAmount - this->quantity );
 		}
 		else
 		{
 			this->quantity -= subtractAmount;
+			return 0;
 		}
 	}
 	else
 	{
 		this->quantity += amount;
+		return this->clampQuantity();
 	}
 }
 
 size_t Item::getMaxStackQuantity() const
 {
 	return 100;
+}
+
+int Item::clampQuantity()
+{
+	if ( this->quantity > this->getMaxStackQuantity() )
+	{
+		const int overFlow = this->quantity - this->getMaxStackQuantity();
+		this->quantity = this->getMaxStackQuantity();
+		return overFlow;
+	}
+	else return 0;
 }

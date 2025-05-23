@@ -11,11 +11,11 @@ public:
 
 	void setDamage(double damage);
 
+	virtual ~Weapon() = default;
+
 protected:
 	Weapon( const std::string& name, const std::string& description, double price, double damage );
 	Weapon( const std::string& name, const std::string& description, double price, size_t quantity, double damage );
-
-	virtual ~Weapon() = default;
 
 private:
 	double damage;
